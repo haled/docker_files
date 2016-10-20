@@ -1,0 +1,7 @@
+FROM node:4
+
+EXPOSE 80
+
+VOLUME ["/opt/code/exercise","/opt/code/precompiler"]
+
+CMD /bin/bash
