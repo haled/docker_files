@@ -18,7 +18,15 @@ LABEL Description="Windows Server 2016 Nano Server base OS image for Windows con
 ADD https://nodejs.org/dist/v6.11.3/node-v6.11.3-win-x64.zip C:\\build\\node-v6.11.3-win-x64.zip
 
 RUN powershell -Command Expand-Archive C:\build\node-v6.11.3-win-x64.zip C:\; Rename-Item C:\node-v6.11.3-win-x64 node
-RUN SETX PATH C:\node
+#RUN SETX PATH C:\node
+
+# angular/cli
+# https://github.com/angular/angular-cli/archive/v1.4.1.zip
+ADD https://github.com/angular/angular-cli/archive/v1.4.1.zip c:\\build\\angular-cli.v1.4.1.zip
+RUN powershell -Command Expand-Archive c:\build\angular-cli.v1.4.1.zip c:\;
+RUN SETX PATH c:\node;c:\angular-cli-1.4.1\bin
+
+#RUN npm install -g @angular/cli
 
 #ENTRYPOINT C:\node\node.exe
 CMD powershell
