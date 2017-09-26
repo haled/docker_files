@@ -1,0 +1,1 @@
+ docker run --rm -it -v C:\clearent\WhatIsMocking:C:\source dotnet_core:20 powershell
